@@ -92,7 +92,9 @@ export const CraftingMenu: React.FC<Props> = ({
   });
 
   const Action = () => {
-    return <span id="recipe-description">Locked</span>;
+    if (selectedRecipe.isLocked) {
+      return <span id="recipe-description">Coming soon...</span>;
+    }
 
     if (isUnsaved) {
       return (
