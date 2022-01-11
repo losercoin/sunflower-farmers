@@ -37,7 +37,7 @@ export const Charity: React.FC<Props> = ({ onSelect }) => {
     heiferBalance: "",
   });
 
-  const [donation, setDonation] = React.useState<number>(0.3);
+  const [donation, setDonation] = React.useState<number>(0.03);
 
   React.useEffect(() => {
     if (machineState.context.blockChain.isConnected) {
@@ -53,20 +53,20 @@ export const Charity: React.FC<Props> = ({ onSelect }) => {
     machineState.context.blockChain.isConnected,
   ]);
 
-  const roundToOneDecimal = (number) => Math.round(number * 10) / 10;
+  const roundToOneDecimal = (number) => Math.round(number * 100) / 100;
 
   const handleDonationChange = (event) => {
     setDonation(roundToOneDecimal(event.currentTarget.value));
   };
 
   const incrementDonation = () => {
-    setDonation((prevState) => roundToOneDecimal(prevState + 0.1));
+    setDonation((prevState) => roundToOneDecimal(prevState + 0.01));
   };
 
   const decrementDonation = () => {
-    if (donation === 0.1) {
-      setDonation(0.1);
-    } else setDonation((prevState) => roundToOneDecimal(prevState - 0.1));
+    if (donation === 0.01) {
+      setDonation(0.01);
+    } else setDonation((prevState) => roundToOneDecimal(prevState - 0.01));
   };
 
   return (
@@ -80,9 +80,9 @@ export const Charity: React.FC<Props> = ({ onSelect }) => {
         <div id="donation-input-container">
           <input
             type="number"
-            step="0.1"
+            step="0.01"
             id="donation-input"
-            min={0.1}
+            min={0.01}
             value={donation}
             onChange={handleDonationChange}
           />
@@ -102,7 +102,7 @@ export const Charity: React.FC<Props> = ({ onSelect }) => {
           </div>
         </div>
 
-        <span id="donate-minimum-description">Minimum of $0.1 MATIC </span>
+        <span id="donate-minimum-description">Minimum of $0.01 MATIC </span>
         <div id="charities">
           {/* <div>
             <div className="charity">Cool Earth</div>

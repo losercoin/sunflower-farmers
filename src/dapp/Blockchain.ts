@@ -31,10 +31,10 @@ interface Account {
 
 type Contracts = Record<ItemName, any>;
 
-export const MINIMUM_GAS_PRICE = 40;
+export const MINIMUM_GAS_PRICE = 2;
 const SAVE_OFFSET_SECONDS = 5;
 export const COMMUNITY_CRAFTING_ADDRESS =
-  "0x248b3f1ead0aB11A975c55A6ed8c690B5E5A10d1";
+  "0x8c90E92945262E8852c59935624EE18FB172e8d6";
 
 export class BlockChain {
   private web3: Web3 | null = null;
@@ -67,19 +67,19 @@ export class BlockChain {
     try {
       this.token = new this.web3.eth.Contract(
         Token as any,
-        "0xdf9B4b57865B403e08c85568442f95c26b7896b0"
+        "0x4fa836d67aeD3b3a62C60e5FA9AcEaB7d30EddF9"
       );
       this.farm = new this.web3.eth.Contract(
         Farm as any,
-        "0x6e5Fa679211d7F6b54e14E187D34bA547c5d3fe0"
+        "0x3C470e595e32cf3fca969B60A8b8745202E857Dd"
       );
       this.chickens = new this.web3.eth.Contract(
         Chicken as any,
-        "0xf0F1Cc9192ca0064EB3D35e0DE1CE5e56572ecab"
+        "0x8B3acDe8DA303e4A22AB074f73D1c4d32Dd55908"
       );
       this.quickswap = new this.web3.eth.Contract(
         QuickSwap as any,
-        "0xa5E0829CaCEd8fFDD4De3c43696c57F7D7A678ff"
+        "0xf164fC0Ec4E93095b804a4795bBe1e041497b92a"
       );
       this.communityCrafting = new this.web3.eth.Contract(
         CommunityCrafting as any,
@@ -103,11 +103,11 @@ export class BlockChain {
 
       this.alchemyToken = new this.web3.eth.Contract(
         Token as any,
-        "0xdf9B4b57865B403e08c85568442f95c26b7896b0"
+        "0x4fa836d67aeD3b3a62C60e5FA9AcEaB7d30EddF9"
       );
       this.alchemyFarm = new this.web3.eth.Contract(
         Farm as any,
-        "0x6e5Fa679211d7F6b54e14E187D34bA547c5d3fe0"
+        "0x3C470e595e32cf3fca969B60A8b8745202E857Dd"
       );
     } catch (e) {
       // Timeout, retry
@@ -160,7 +160,7 @@ export class BlockChain {
       this.oldInventory = null;
       const chainId = await this.web3.eth.getChainId();
 
-      if (chainId === 137) {
+      if (chainId === 3) {
         await this.connectToMatic();
 
         await this.loadFarm();
@@ -770,8 +770,8 @@ export class BlockChain {
     const base = 10000000000;
     const rate = await this.quickswap.methods
       .getAmountsIn(base, [
-        "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270",
-        "0xdf9B4b57865B403e08c85568442f95c26b7896b0",
+        "0xc778417E063141139Fce010982780140Aa0cD5Ab", //wmatic
+        "0x4fa836d67aeD3b3a62C60e5FA9AcEaB7d30EddF9", //sff
       ])
       .call({ from: this.account });
 

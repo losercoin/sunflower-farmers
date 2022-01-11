@@ -49,7 +49,7 @@ const Content: React.FC<Props> = ({ code }) => {
     return (
       <div id="wrong-chain">
         <span>
-          It looks like you are not connected to the Polygon Blockchain.
+          It looks like you are not connected to the Okex Blockchain.
         </span>
 
         <Button

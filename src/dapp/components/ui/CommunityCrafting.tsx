@@ -45,7 +45,7 @@ const COMMUNITY_RECIPES = recipes.filter(
 const COMMISION = 0.25;
 
 // In case people take awhile to confirm the transaction
-const SLIPPAGE = 0.02;
+const SLIPPAGE = 0.1;
 
 const MATIC_MULTIPLIER = 1 + COMMISION + SLIPPAGE;
 
