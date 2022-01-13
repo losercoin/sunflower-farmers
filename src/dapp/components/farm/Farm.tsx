@@ -222,7 +222,7 @@ export const Farm: React.FC = () => {
 
   const onBuyMore = () => {
     window.open(
-      "https://quickswap.exchange/#/swap?outputCurrency=0xdf9B4b57865B403e08c85568442f95c26b7896b0",
+      "https://www.cherryswap.net/#/swap?outputCurrency=0x89C7Fc93bb78dDF809E3F317501563a6323E22CD",
       "_blank"
     );
   };
@@ -287,7 +287,7 @@ export const Farm: React.FC = () => {
       </div>
 
       <div id="buy-now" onClick={onBuyMore}>
-        <Message>Quickswap</Message>
+        <Message>Cherryswap</Message>
       </div>
 
       <FruitBoard

@@ -75,7 +75,7 @@ export const Charity: React.FC<Props> = ({ onSelect }) => {
         <span>Donate to play.</span>
         <span id="donate-description">
           To start a farm, please donate to a charity of your choice. Ensure you
-          are connected to the Polygon network.
+          are connected to the Okex network.
         </span>
         <div id="donation-input-container">
           <input
@@ -102,7 +102,7 @@ export const Charity: React.FC<Props> = ({ onSelect }) => {
           </div>
         </div>
 
-        <span id="donate-minimum-description">Minimum of $0.01 MATIC </span>
+        <span id="donate-minimum-description">Minimum of $0.01 OKT </span>
         <div id="charities">
           {/* <div>
             <div className="charity">Cool Earth</div>
@@ -146,9 +146,9 @@ export const Charity: React.FC<Props> = ({ onSelect }) => {
             </div>
           </div> */}
           <div>
-            <div className="charity">The Water project</div>
+            <div className="charity">Loser Foundation</div>
             <span className="charity-description">
-              You can provide clean, safe and reliable water today.
+              You can help losers around the world
             </span>
             <OverlayTrigger
               key="water"
@@ -166,7 +166,7 @@ export const Charity: React.FC<Props> = ({ onSelect }) => {
             <div className="charity-buttons">
               <Button
                 onClick={() =>
-                  window.open("https://thewaterproject.org/donate-ethereum")
+                  window.open("https://twitter.com/loser_coin/status/1473491324993105921")
                 }
               >
                 About
@@ -185,9 +185,9 @@ export const Charity: React.FC<Props> = ({ onSelect }) => {
             </div>
           </div>
           <div>
-            <div className="charity">Heifer</div>
+            <div className="charity">Help Programmer</div>
             <span className="charity-description">
-              We do more than train farmers. We grow incomes.
+              Encourage programmers to develop more cool apps for losercoin community.
             </span>
             <OverlayTrigger
               key="water"
@@ -205,7 +205,7 @@ export const Charity: React.FC<Props> = ({ onSelect }) => {
               <Button
                 onClick={() =>
                   window.open(
-                    "https://www.heifer.org/give/other/digital-currency.html"
+                    "https://losercoin.org/"
                   )
                 }
               >

@@ -54,7 +54,7 @@ export interface Ingredient {
     | "Gold"
     | "Egg"
     | "Wheat"
-    | "MATIC";
+    | "OKT";
   image: any;
   amount: number;
 }
@@ -112,7 +112,7 @@ export const recipes: Recipe[] = [
     description: "Used for cutting and collecting wood",
     image: axe,
     type: "ERC20",
-    address: "0xbF3b50220F095C6597bc165a602fCEFA0eDc808B",
+    address: "0xb891f2F11851380746C671F5E19F626436E32496",
     ingredients: [
       {
         name: "$SFF",
@@ -127,7 +127,7 @@ export const recipes: Recipe[] = [
     description: "Used for mining and collecting stone",
     image: woodPickaxe,
     type: "ERC20",
-    address: "0x7865C8C04A647D0ca40da87c75180919825e8588",
+    address: "0x60Cb7e24d1fAf18206EEb89e523Bf130f15eE404",
     ingredients: [
       {
         name: "Wood",
@@ -148,7 +148,7 @@ export const recipes: Recipe[] = [
     description: "Used for mining and collecting iron ore",
     image: pickaxe,
     type: "ERC20",
-    address: "0xBF3AC45E7eb5b3c9853F71C2A3270fAf68F8d552",
+    address: "0x2B322bE31Eac05d9D8E3bae25DaB21B129d37A96",
     ingredients: [
       {
         name: "Wood",
@@ -173,7 +173,7 @@ export const recipes: Recipe[] = [
     description: "Used for mining and collecting gold",
     image: ironPickaxe,
     type: "ERC20",
-    address: "0xCf57667f3c107Cd97105B9CD97c81C21aB8ba0C5",
+    address: "0x9771D2d8d22BEBBc1826909F8453A54AF599d2E8",
     ingredients: [
       {
         name: "Wood",
@@ -259,7 +259,7 @@ export const recipes: Recipe[] = [
     description: "A symbol of the holy token",
     image: statue,
     type: "NFT",
-    address: "0xCdbBC29265f0F3393A0e0C00a7415857E9Af4b8C",
+    address: "0x5f38e933Ff552C6666C4810c940E20711d5274a1",
     ingredients: [
       {
         name: "$SFF",
@@ -286,7 +286,7 @@ export const recipes: Recipe[] = [
     description: "Grow wheat (coming soon) 3x faster.",
     image: scarecrow,
     type: "NFT",
-    address: "0x5c1063DE871C9C98AdE8F309654E095593De6570",
+    address: "0x25FA3D7fC37186bb3Cab8b8Cfb17F09eC583eC9E",
     ingredients: [
       {
         name: "$SFF",
@@ -309,7 +309,7 @@ export const recipes: Recipe[] = [
     description: "A christmas tree for the holidays",
     image: christmasTree,
     type: "NFT",
-    address: "0x53d246cA9591EA1E175A266afaCaf6652ecAE664",
+    address: "0x128E8E0d51dC938f901f9d1FD03799E1af12aAf3",
     openSeaLink:
       "https://opensea.io/collection/sunflower-farmers-christmas-tree",
     ingredients: [
@@ -332,7 +332,7 @@ export const recipes: Recipe[] = [
     description: "Produce eggs 3x as fast with this stylish coop",
     image: chickenCoop,
     type: "NFT",
-    address: "0x4490A931d03A5c2F201F5FCe812dA44529f36137",
+    address: "0x84F3f92E9C9f41e4aaB842Ba4665cA84273e08c3",
     ingredients: [
       {
         name: "$SFF",
@@ -360,7 +360,7 @@ export const recipes: Recipe[] = [
     description: "An animal used to produce eggs",
     image: chicken,
     type: "ERC20",
-    address: "0x8B3acDe8DA303e4A22AB074f73D1c4d32Dd55908",
+    address: "0x24DBC19f6c5231DA92321983d47b303CF140B6c9",
     ingredients: [
       {
         name: "$SFF",
@@ -375,7 +375,7 @@ export const recipes: Recipe[] = [
     description: "Will the golden egg bring you happiness?",
     image: goldEgg,
     type: "NFT",
-    address: "0x3059facf426Dae7A015a2b58A46782F26038C738",
+    address: "0x90658195ABeFFDDDF2a2a52e76328191a027C256",
     limit: 300,
     supply: 300,
     openSeaLink:
@@ -399,7 +399,7 @@ export const recipes: Recipe[] = [
     description: "Flex your status as an original potato hustler",
     image: potatoStatue,
     type: "NFT",
-    address: "0xdfa1Db59017D6D216D9b40Ce05F6bE16AF11d8B3",
+    address: "0xFdd285FaC915416d577c60f3351bd527d6180334",
     ingredients: [
       {
         name: "Stone",
@@ -417,7 +417,7 @@ export const recipes: Recipe[] = [
     description: "A cat named Victoria that helps keep rats away.",
     image: farmCat,
     type: "NFT",
-    address: "0x997Bb38CDF3d15342dfb4B78efE51C90a5ab068d",
+    address: "0x1D0fAD98Cd1CE1c75029992633D851d11bC0D21b",
     ingredients: [
       {
         name: "Gold",
@@ -435,7 +435,7 @@ export const recipes: Recipe[] = [
     description: "Herd sheep 4x faster with Chonker the Dog.",
     image: dog,
     type: "NFT",
-    address: "0x6df04b53b4Fb9668eeAE739479b0ef67F6625706",
+    address: "0xd99D6d31cae989C9cD3D84058317fAcE50782bb6",
     ingredients: [
       {
         name: "$SFF",
@@ -457,7 +457,7 @@ export const recipes: Recipe[] = [
     description: "Influence the weather with this magic gnome",
     image: gnome,
     type: "NFT",
-    address: "0xB57eC65C58404700265a9b1f103cd0Aa3C48c406",
+    address: "0xC3773DAe379b212788640D30B7d0E310e9E6cDa1",
     ingredients: [
       {
         name: "$SFF",
@@ -511,7 +511,7 @@ export const items: Item[] = [
     description: "A natural resource in Sunflower Land used for crafting",
     image: stone,
     type: "ERC20",
-    address: "0x52C06763F9E92eCba23C1068Cbe5a374e13c8609",
+    address: "0x85c31a63939804BC6feFDE9F752338edcCc6F872",
   },
   {
     name: "Wood",
@@ -520,7 +520,7 @@ export const items: Item[] = [
       "A bountiful resource in Sunflower Land used for crafting",
     image: wood,
     type: "ERC20",
-    address: "0x1A648C8210382e598f5Bd32eB9b8003d49E6dc00",
+    address: "0x37bd5138402F994c7Be9BEebE45fc5aAFf5e3c64",
   },
 
   {
@@ -530,7 +530,7 @@ export const items: Item[] = [
       "A bountiful resource in Sunflower Land used for crafting",
     image: iron,
     type: "ERC20",
-    address: "0x22076CF56620b629865bb0BAeC458bBE8f030b53",
+    address: "0xf9030a3a5259E3aB8A1c7f98924BAC3882dfc2e8",
   },
   {
     name: "Gold",
@@ -538,7 +538,7 @@ export const items: Item[] = [
     description: "A scarce resource in Sunflower Land used for crafting",
     image: goldOre,
     type: "ERC20",
-    address: "0x0F4D6456A234166268ce0dA9485F810280AAC75b",
+    address: "0xCc3E026217179F29317344D7691A7f608aa9437a",
   },
   {
     name: "Egg",
@@ -547,7 +547,7 @@ export const items: Item[] = [
       "A bountiful resource in Sunflower Land used for crafting",
     image: egg,
     type: "ERC20",
-    address: "0x7dB175Bde9b63A444833C1A81FA5Be3713BE7C71",
+    address: "0x8f6968A43cDdFBB3307B6F23dc93ed3fF6310828",
   },
 ];
 
