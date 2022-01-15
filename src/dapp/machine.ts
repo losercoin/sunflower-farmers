@@ -25,7 +25,13 @@ const MOBILE_DEVICES =
   /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
 
 const isMobile = () => {
-  return MOBILE_DEVICES.test(navigator.userAgent);
+  if (MOBILE_DEVICES.test(navigator.userAgent)) {
+    window.location.replace("https://www.loserland.org/mobile")
+  }
+  else {
+    return false;
+  }
+  
 };
 
 export interface FarmCreatedEvent extends EventObject {
