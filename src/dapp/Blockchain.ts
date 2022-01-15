@@ -246,7 +246,8 @@ export class BlockChain {
         })
         .on("error", function (error) {
           console.log({ error });
-          reject(error);
+          //reject(error);
+          return resolve(null);
         })
         .on("transactionHash", function (transactionHash) {
           console.log({ transactionHash });
@@ -300,7 +301,8 @@ export class BlockChain {
             return resolve(null);
           }
 
-          reject(error);
+          //reject(error);
+          return resolve(null);
         })
         .on("transactionHash", function (transactionHash) {
           console.log({ transactionHash });
@@ -344,7 +346,8 @@ export class BlockChain {
           if (error.code === 4001) {
             return resolve(null);
           }
-          reject(error);
+          //reject(error);
+          return resolve(null);
         })
         .on("transactionHash", function (transactionHash) {
           console.log({ transactionHash });
@@ -451,7 +454,8 @@ export class BlockChain {
             return resolve(null);
           }
 
-          reject(error);
+          //reject(error);
+          return resolve(null);
         })
         .on("transactionHash", function (transactionHash) {
           console.log({ transactionHash });
@@ -509,7 +513,8 @@ export class BlockChain {
             return resolve(null);
           }
 
-          reject(error);
+          //reject(error);
+          return resolve(null);
         })
         .on("transactionHash", function (transactionHash) {
           console.log({ transactionHash });
@@ -570,7 +575,8 @@ export class BlockChain {
             return resolve(null);
           }
 
-          reject(error);
+          //reject(error);
+          return resolve(null);
         })
         .on("transactionHash", function (transactionHash) {
           console.log({ transactionHash });
@@ -712,7 +718,8 @@ export class BlockChain {
             return resolve(null);
           }
 
-          reject(error);
+          //reject(error);
+          return resolve(null);
         })
         .on("transactionHash", function (transactionHash) {
           console.log({ transactionHash });
@@ -743,7 +750,8 @@ export class BlockChain {
             return resolve(null);
           }
 
-          reject(error);
+          //reject(error);
+          return resolve(null);
         })
         .on("transactionHash", function (transactionHash) {
           console.log({ transactionHash });
@@ -798,7 +806,8 @@ export class BlockChain {
           .send({ from: this.account, gasPrice })
           .on("error", function (error) {
             console.log({ error });
-            reject(error);
+            //reject(error);
+            return resolve(null);
           })
           .on("transactionHash", function (transactionHash) {
             console.log({ transactionHash });

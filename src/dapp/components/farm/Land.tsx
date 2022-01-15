@@ -37,8 +37,8 @@ interface Props {
   totalItemSupplies: Inventory;
 }
 
-const columns = Array(60).fill(null);
-const rows = Array(20).fill(null);
+const columns = Array(16).fill(null);
+const rows = Array(24).fill(null);
 
 // based on the amount of fields, determine the level
 const landToLevel = {
@@ -66,12 +66,24 @@ export const Land: React.FC<Props> = ({
     <>
       {columns.map((_, column) =>
         rows.map((_, row) =>
-          (column + row) % 2 ? null : (
+          (column + row) % 2 ? (
             <div
               className="grass1"
               style={{
                 position: "absolute",
-                left: `calc(${(column - 25) * 62.5}px + 18px)`,
+                left: `calc(${(column) * 62.5}px)`,
+                top: `${row * 62.5}px`,
+                width: "62.5px",
+                height: "62.5px",
+                background: "#62c84c",
+              }}
+            />
+          ) : (
+            <div
+              className="grass1"
+              style={{
+                position: "absolute",
+                left: `calc(${(column) * 62.5}px)`,
                 top: `${row * 62.5}px`,
                 width: "62.5px",
                 height: "62.5px",
@@ -150,7 +162,7 @@ export const Land: React.FC<Props> = ({
       </div>
 
       {/* Water */}
-      {new Array(50).fill(null).map((_, index) => (
+      {new Array(16).fill(null).map((_, index) => (
         <img
           className="water-edge"
           src={waterEdge}

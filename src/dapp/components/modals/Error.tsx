@@ -106,9 +106,10 @@ const Content: React.FC<Props> = ({ code }) => {
   );
 };
 export const Error: React.FC<Props> = ({ code }) => (
+  code.search("newBlockHeaders") > 0 ? null : (
   <Panel>
     <div id="error">
       <Content code={code} />
     </div>
-  </Panel>
+  </Panel>)
 );

@@ -326,13 +326,13 @@ export const Tiles: React.FC<Props> = () => {
         <img className="bridge" src={bridge} />
       </div>
 
-      <div id="environment-left">
+      {/* <div id="environment-left">
         <DecorationFiller />
       </div>
 
       <div id="environment-right">
         <DecorationFiller />
-      </div>
+      </div> */}
     </>
   );
 };

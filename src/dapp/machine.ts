@@ -25,7 +25,8 @@ const MOBILE_DEVICES =
   /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
 
 const isMobile = () => {
-  return MOBILE_DEVICES.test(navigator.userAgent);
+  //return MOBILE_DEVICES.test(navigator.userAgent);
+  return false;
 };
 
 export interface FarmCreatedEvent extends EventObject {
