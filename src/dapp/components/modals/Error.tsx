@@ -30,7 +30,7 @@ const Content: React.FC<Props> = ({ code }) => {
         You are not connected to Metamask.
         <Button
           onClick={() =>
-            window.open("https://docs.sunflower-farmers.com/")
+            window.open("https://docs.loserland.org/")
           }
         >
           How to setup Metamask
@@ -54,7 +54,7 @@ const Content: React.FC<Props> = ({ code }) => {
 
         <Button
           onClick={() =>
-            window.open("https://docs.sunflower-farmers.com/")
+            window.open("https://docs.loserland.org/")
           }
         >
           How to Connect

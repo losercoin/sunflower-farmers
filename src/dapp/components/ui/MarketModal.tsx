@@ -76,7 +76,7 @@ export const MarketModal: React.FC<Props> = ({ isOpen, onClose }) => {
             )}
           </div>
 
-          <a href="https://docs.sunflower-farmers.com/tokenomics">
+          <a href="https://docs.loserland.org/tokenomics">
             <h3 className="current-price-supply-demand">
               Read more about our tokenomics here
             </h3>

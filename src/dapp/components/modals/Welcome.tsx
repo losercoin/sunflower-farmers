@@ -60,7 +60,7 @@ export const Welcome: React.FC<Props> = ({ onGetStarted }) => {
           <span>Get Started</span>
         </Button>
         <Button
-          onClick={() => window.open("https://docs.sunflower-farmers.com/")}
+          onClick={() => window.open("https://docs.loserland.org/")}
         >
           About
           <img src={questionMark} id="question" />
@@ -73,7 +73,7 @@ export const Welcome: React.FC<Props> = ({ onGetStarted }) => {
             <span className="current-price">= {`${sunflowerPrice} $SFF`}</span>
           </div>
           <br />
-          <a href="https://docs.sunflower-farmers.com/tokenomics">
+          <a href="https://docs.loserland.org/tokenomics">
             <h3 className="current-price-supply-demand">
               Read more about the supply & demand
             </h3>

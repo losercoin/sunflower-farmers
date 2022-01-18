@@ -190,7 +190,7 @@ export const CommunityCrafting: React.FC<Props> = ({
         </div>
         <div id="community-footer">
           <a
-            href="https://docs.sunflower-farmers.com/crafting-guide#crowd-sourced-crafting"
+            href="https://docs.loserland.org/crafting-guide#crowd-sourced-crafting"
             target="_blank"
           >
             <h3 className="current-price-supply-demand">Read more</h3>
