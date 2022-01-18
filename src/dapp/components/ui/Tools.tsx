@@ -160,7 +160,7 @@ export const Tools: React.FC<Props> = ({
           <InventoryItems inventory={inventory} />
         </div>
         <a
-          href="https://docs.sunflower-farmers.com/crafting-guide"
+          href="https://docs.loserland.org/crafting-guide"
           target="_blank"
         >
           <h3 className="current-price-supply-demand">Read more</h3>

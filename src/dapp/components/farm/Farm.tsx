@@ -267,7 +267,7 @@ export const Farm: React.FC = () => {
           </Button>
           <Button
             onClick={() =>
-              window.open("https://docs.sunflower-farmers.com/")
+              window.open("https://docs.loserland.org/")
             }
           >
             About

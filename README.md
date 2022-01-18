@@ -6,7 +6,7 @@ You can play the game here: https://www.sunflower-farmers.com/
 
 # How does it work?
 
-For more details, please see the guide - https://docs.sunflower-farmers.com/
+For more details, please see the guide - https://docs.loserland.org/
 
 # Code Structure
 

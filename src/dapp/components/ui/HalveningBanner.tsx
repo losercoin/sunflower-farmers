@@ -59,7 +59,7 @@ export const Banner: React.FC = () => {
           Be prepared!
         </span>
         <a
-          href="https://docs.sunflower-farmers.com/tokenomics#the-halvening"
+          href="https://docs.loserland.org/tokenomics#the-halvening"
           target="_blank"
         >
           Read more

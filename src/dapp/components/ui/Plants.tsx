@@ -51,7 +51,7 @@ export const Plants: React.FC<Props> = ({
           )}
         </div>
         <a
-          href="https://docs.sunflower-farmers.com/plant-guide"
+          href="https://docs.loserland.org/plant-guide"
           target="_blank"
         >
           <h3 className="current-price-supply-demand">Read more</h3>

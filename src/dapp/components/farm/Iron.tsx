@@ -242,7 +242,7 @@ export const Iron: React.FC<Props> = ({ inventory }) => {
                   A bountiful resource that can be mined for iron ore.
                 </span>
                 <a
-                  href="https://docs.sunflower-farmers.com/resources"
+                  href="https://docs.loserland.org/resources"
                   target="_blank"
                 >
                   <h3 className="current-price-supply-demand">Read more</h3>
