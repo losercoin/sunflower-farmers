@@ -37,7 +37,7 @@ import goldEgg from "../images/ui/gold_egg.png";
 import coin from "../images/ui/icon.png";
 import statue from "../images/ui/sunflower_statue.png";
 import potatoStatue from "../images/ui/potato_statue.png";
-import christmasTree from "../images/ui/christmas_tree.png";
+import christmasTree from "../images/ui/money_tree.png";
 import scarecrow from "../images/ui/scarecrow.png";
 import farmCat from "../images/ui/farm_cat.png";
 import dog from "../images/ui/dog.png";
@@ -81,7 +81,7 @@ export interface Item {
     | "Chicken coop"
     | "Sunflower Statue"
     | "OG Potato Statue"
-    | "Christmas Tree"
+    | "Money Tree"
     | "Golden Egg"
     | "Scarecrow"
     | "Farm Cat"
@@ -304,9 +304,9 @@ export const recipes: Recipe[] = [
     supply: 5000,
   },
   {
-    name: "Christmas Tree",
+    name: "Money Tree",
     abi: ChristmasTree,
-    description: "A christmas tree for the holidays",
+    description: "A money tree for the holidays",
     image: christmasTree,
     type: "NFT",
     address: "0x128E8E0d51dC938f901f9d1FD03799E1af12aAf3",
@@ -572,7 +572,7 @@ export const DEFAULT_INVENTORY: Inventory = {
   Sword: 0,
   Scarecrow: 0,
   "Golden Egg": 0,
-  "Christmas Tree": 0,
+  "Money Tree": 0,
   "Farm Cat": 0,
   "Farm Dog": 0,
   Gnome: 0,
