@@ -6,7 +6,7 @@ import farmCat from "../../images/ui/farm_cat.png";
 import gnome from "../../images/ui/gnome.png";
 import dog from "../../images/ui/dog.png";
 import scarecrow from "../../images/ui/scarecrow.png";
-import christmasTree from "../../images/ui/christmas_tree.png";
+import christmasTree from "../../images/ui/money_tree.png";
 import { Inventory } from "../../types/crafting";
 
 import "./NFTs.css";
@@ -18,8 +18,8 @@ interface Props {
 export const NFTs: React.FC<Props> = ({ inventory }) => {
   const now = new Date();
   const hasInventoryChristmasTree = inventory["Christmas Tree"] > 0;
-  const isProperTimingChristmasTree =
-    now.getMonth() === 11 && now.getDate() <= 25;
+  const isProperTimingChristmasTree = true;
+    //now.getMonth() === 11 && now.getDate() <= 25;
   const showChristmasTree =
     hasInventoryChristmasTree && isProperTimingChristmasTree;
 
