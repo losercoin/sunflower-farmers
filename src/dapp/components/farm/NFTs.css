@@ -48,9 +48,15 @@
 
 #potato-statue > img {
   width: 48%;
+  cursor: pointer;
   position: relative;
   left: 165%;
   bottom: 136%;
+}
+
+#potato-statue:hover {
+  filter: drop-shadow(1px 1px 0px white) drop-shadow(-1px 0px 0px white)
+    drop-shadow(0px -1px 0px white);
 }
 
 #scarecrow {
