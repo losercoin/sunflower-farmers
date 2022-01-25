@@ -26,6 +26,7 @@ import {
 } from "../../machine";
 
 import coin from "../../images/ui/icon.png";
+import squidGame from "../../images/ui/squid_game.png";
 import questionMark from "../../images/ui/expression_confused.png";
 
 import { Panel } from "../ui/Panel";
@@ -41,6 +42,7 @@ import { DEFAULT_INVENTORY, Inventory } from "../../types/crafting";
 
 export const Farm: React.FC = () => {
   const [balance, setBalance] = React.useState<Decimal>(new Decimal(0));
+  const [squidBalance, setSquidBalance] = React.useState<Decimal>(new Decimal(0));
   const [land, setLand] = React.useState<Square[]>(
     Array(5).fill({
       fruit: Fruit.None,
@@ -116,10 +118,12 @@ export const Farm: React.FC = () => {
         const {
           farm,
           balance: currentBalance,
+          squidBalance: currentSquidBalance,
           id,
         } = machineState.context.blockChain.myFarm;
         setLand(farm);
         setBalance(new Decimal(currentBalance));
+        setSquidBalance(new Decimal(currentSquidBalance));
         farmIsFresh.current = true;
         accountId.current = id;
 
@@ -232,6 +236,7 @@ export const Farm: React.FC = () => {
   };
 
   const safeBalance = balance.toNumber();
+  const safeSquidBalance = squidBalance.toNumber();
 
   return (
     <>
@@ -282,6 +287,13 @@ export const Farm: React.FC = () => {
             <img src={coin} />
             {machineState.context.blockChain.isConnected &&
               safeBalance.toFixed(3)}
+          </div>
+        </Panel>
+        <Panel>
+          <div id="inner">
+            <img src={squidGame} />
+            {machineState.context.blockChain.isConnected &&
+              safeSquidBalance.toFixed(3)}
           </div>
         </Panel>
       </div>

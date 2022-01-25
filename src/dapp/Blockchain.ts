@@ -4,6 +4,7 @@ import Token from "../abis/Token.json";
 import Farm from "../abis/Farm.json";
 import CommunityCrafting from "../abis/CommunityCrafting.json";
 import Chicken from "../abis/Chicken.json";
+import Pray from "../abis/PrayToPotatoStatue.json";
 import QuickSwap from "../abis/QuickSwapRouter.json";
 
 import {
@@ -26,6 +27,7 @@ import { getUpgradePrice } from "./utils/land";
 interface Account {
   farm: Square[];
   balance: number;
+  squidBalance: number;
   id: string;
 }
 
@@ -35,15 +37,20 @@ export const MINIMUM_GAS_PRICE = 0.2;
 const SAVE_OFFSET_SECONDS = 5;
 export const COMMUNITY_CRAFTING_ADDRESS =
   "0xf2fDfeF96398A15b08D971B2D885Bf03195f5B3B";
+export const PRAY_ADDRESS =
+  "0xDe660Cc66083fE9E5AbBe383CD2658d32edD6007";
+
 
 export class BlockChain {
   private web3: Web3 | null = null;
   private token: any | null = null;
   private alchemyToken: any | null = null;
+  private squidToken: any | null = null;
   private farm: any | null = null;
   private quickswap: any | null = null;
   private communityCrafting: any | null = null;
   private chickens: any | null = null;
+  private pray: any | null = null;
   private alchemyFarm: any | null = null;
   private account: string | null = null;
 
@@ -77,6 +84,10 @@ export class BlockChain {
         Chicken as any,
         "0x24DBC19f6c5231DA92321983d47b303CF140B6c9"
       );
+      this.pray = new this.web3.eth.Contract(
+        Pray as any,
+        "0xDe660Cc66083fE9E5AbBe383CD2658d32edD6007"
+      );
       this.quickswap = new this.web3.eth.Contract(
         QuickSwap as any,
         "0x865bfde337C8aFBffF144Ff4C29f9404EBb22b15"
@@ -104,6 +115,10 @@ export class BlockChain {
       this.alchemyToken = new this.web3.eth.Contract(
         Token as any,
         "0x89C7Fc93bb78dDF809E3F317501563a6323E22CD"
+      );
+      this.squidToken = new this.web3.eth.Contract(
+        Token as any,
+        "0xC9a9bE0f88b44889F30EA0978e984FB5a6eFE68b"
       );
       this.alchemyFarm = new this.web3.eth.Contract(
         Farm as any,
@@ -401,6 +416,7 @@ export class BlockChain {
           },
         ],
         balance: 0,
+        squidBalance: 0,
         id: this.account,
       };
     }
@@ -408,14 +424,19 @@ export class BlockChain {
     const rawBalance = await this.alchemyToken.methods
       .balanceOf(this.account)
       .call({ from: this.account });
+    const rawSquidBalance = await this.squidToken.methods
+      .balanceOf(this.account)
+      .call({ from: this.account });
     const farm = await this.alchemyFarm.methods
       .getLand(this.account)
       .call({ from: this.account });
 
     const balance = this.web3.utils.fromWei(rawBalance.toString());
+    const squidBalance = this.web3.utils.fromWei(rawSquidBalance.toString());
     console.log({ balance });
     return {
       balance: Number(balance),
+      squidBalance: Number(squidBalance),
       farm,
       id: this.account,
     };
@@ -683,6 +704,29 @@ export class BlockChain {
     this.events = [];
   }
 
+  public async getLastPrize() {
+    try {
+      const reward = await this.pray.methods
+        .lastPrize()
+        .call({ from: this.account });
+
+      if (!reward) {
+        return 0;
+      }
+
+      const converted = this.web3.utils.fromWei(reward.toString());
+      this.details = {
+        ...this.details,
+        squidBalance: this.details.squidBalance + Number(converted),
+      };
+
+      return Number(converted);
+    } catch (e) {
+      // No prize ready
+      return null;
+    }
+  }
+
   public async getReward() {
     try {
       const reward = await this.farm.methods
@@ -734,6 +778,33 @@ export class BlockChain {
       ...this.details,
       balance: this.details.balance + reward,
     };
+  }
+
+  public async prayToPotatoStatue() {
+    await new Promise(async (resolve, reject) => {
+      const gasPrice = await this.estimate(2);
+
+      this.pray.methods
+        .pray()
+        .send({ from: this.account, gasPrice })
+        .on("error", function (error) {
+          console.log({ error });
+          // User rejected
+          if (error.code === 4001) {
+            return resolve(null);
+          }
+
+          reject(error);
+        })
+        .on("transactionHash", function (transactionHash) {
+          console.log({ transactionHash });
+        })
+        .on("receipt", async function (receipt) {
+          console.log({ receipt });
+          resolve(receipt);
+        });
+    });
+
   }
 
   public async collectEggs() {
@@ -943,6 +1014,17 @@ export class BlockChain {
       .call({ from: this.account });
 
     return Number(time);
+  }
+
+  public async loadPrayInfo() {
+    const info = await this.pray.methods
+      .getInfo()
+      .call({ from: this.account });
+
+    const sff = this.web3.utils.fromWei(info.sff.toString());
+    const prize = this.web3.utils.fromWei(info._prize.toString());
+
+    return {sff: Number(sff), lucky: Number(info.lucky), prize: Number(prize)};
   }
 
   public async getTreeStrength() {
